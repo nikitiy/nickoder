@@ -1,0 +1,42 @@
+{% load static wagtailcore_tags wagtailuserbar %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        {% block title %}
+        {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+        {% wagtail_site as current_site %}
+        {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+        {% endblock %}
+    </title>
+    {% if page.search_description %}
+    <meta name="description" content="{{ page.search_description }}"/>
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    {% if request.in_preview_panel %}
+    <base target="_blank">
+    {% endif %}
+
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="icon" href="<%= BASE_URL %>images/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="<%= BASE_URL %>images/favicons/apple.png">
+    <link rel="manifest" href="<%= BASE_URL %>manifest.webmanifest">
+</head>
+
+<body>
+{% wagtailuserbar %}
+
+<noscript>
+    <strong>"Этот сайт не работает с выключенным JavaScript, пожалуйста включите его в настройках вышего
+        браузера"</strong>
+</noscript>
+<div id="wrapper"></div>
+
+</body>
+</html>

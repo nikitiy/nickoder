@@ -1,0 +1,67 @@
+@import "null";
+@import "variables";
+@import "fonts";
+@import "selectors";
+
+html, body {
+    background: $color_black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    //color: $color_black;
+    position: relative;
+    z-index: -5;
+}
+
+/* Wrapper */
+.wrapper {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 55px;
+    position: relative;
+}
+
+/* Title */
+.title {
+    font-family: "CodeNext";
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 120%;
+    color: $color_white;
+}
+.title_start {
+    text-align: start;
+}
+
+/* Adaptive */
+@media screen and (max-width: 1280px) {
+
+}
+
+@media screen and (max-width: 1100px) {
+
+}
+
+@media screen and (max-width: 1000px) {
+    .container {max-width: 100%; width: 100%; padding: 0 30px;}
+    .title {font-size: 34px;}
+}
+
+@media screen and (max-width: 480px) {
+    .container {max-width: 100%; width: 100%; padding: 0 15px;}
+    .title {font-size: 30px;}
+}
+
+@media screen and (max-width: 360px) {
+    .title {font-size: 24px;}
+}
