@@ -1,0 +1,20 @@
+{% load static wagtailcore_tags wagtailuserbar %}<!doctype html><html lang="ru"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>{% block title %} {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %} {% endblock %} {% block title_suffix %} {% wagtail_site as current_site %} {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %} {% endblock %}</title>{% if page.search_description %}<meta name="description" content="{{ page.search_description }}"/>{% endif %}<meta name="viewport" content="width=device-width,initial-scale=1"/>{% if request.in_preview_panel %}<base target="_blank">{% endif %}<link rel="icon" href="/static/favicon.ico"><link rel="icon" href="/static/images/favicons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/static/images/favicons/apple.png"><link rel="manifest" href="/static/manifest.webmanifest"><script>(function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(92990533, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });</script><noscript><div><img src="https://mc.yandex.ru/watch/92990533" style="position:absolute; left:-9999px;" alt=""/></div></noscript><script defer="defer" src="/static/js/chunk-vendors.27746edd.js"></script><script defer="defer" src="/static/js/app.e3d9875b.js"></script><link href="/static/css/app.f9a6f651.css" rel="stylesheet"></head><body>{% wagtailuserbar %}<noscript><strong>"Этот сайт не работает с выключенным JavaScript, пожалуйста включите его в настройках вышего браузера"</strong></noscript><div id="wrapper"></div></body></html>
